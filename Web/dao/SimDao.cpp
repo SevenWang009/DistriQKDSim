@@ -189,7 +189,6 @@ int SimDao::clear(){
         );
         pstmt3->executeUpdate();
         delete pstmt3;
-        delete newCon;
  
         // 提交事务
         // con->commit();
