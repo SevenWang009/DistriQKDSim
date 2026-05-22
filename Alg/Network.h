@@ -18,23 +18,23 @@ public:
     CNetwork(void);
     ~CNetwork(void);
     //data structure for input
-    vector<CNode> m_vAllNodes;	// ´æ´¢ÍøÂçÖÐËùÓÐ½ÚµãµÄÁÐ±í
-    vector<CLink> m_vAllLinks;	// ´æ´¢ÍøÂçÖÐËùÓÐÁ´Â·µÄÁÐ±í
-    vector<CDemand> m_vAllDemands;	// ´æ´¢ÍøÂçÖÐËùÓÐÐèÇóµÄÁÐ±í
-    vector<CRelayPath> m_vAllRelayPaths;	// ´æ´¢ÍøÂçÖÐËùÓÐÖÐ¼ÌÂ·¾¶µÄÁÐ±í
-    map<pair<NODEID, NODEID>, LINKID> m_mNodePairToLink;	// ÓÃÓÚ¸ù¾Ý½Úµã¶Ô²éÕÒ¶ÔÓ¦Á´Â·µÄÓ³Éä±í
-    vector<CNetEvent> m_vAllExistingEvent;	// ´æ´¢ÍøÂçÖÐµÄËùÓÐÊÂ¼þ   ±£Áô£¬Î´Ê¹ÓÃ
+    vector<CNode> m_vAllNodes;	// ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð½Úµï¿½ï¿½ï¿½Ð±ï¿½
+    vector<CLink> m_vAllLinks;	// ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ð±ï¿½
+    vector<CDemand> m_vAllDemands;	// ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+    vector<CRelayPath> m_vAllRelayPaths;	// ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
+    map<pair<NODEID, NODEID>, LINKID> m_mNodePairToLink;	// ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½Ý½Úµï¿½Ô²ï¿½ï¿½Ò¶ï¿½Ó¦ï¿½ï¿½Â·ï¿½ï¿½Ó³ï¿½ï¿½ï¿½
+    vector<CNetEvent> m_vAllExistingEvent;	// ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´Ê¹ï¿½ï¿½
 
     //data structure for simulation
-    multimap<TIME, EVENTID> m_mUncompltedEvent;	// ´æ´¢Î´Íê³ÉÊÂ¼þµÄÊ±¼äºÍÊÂ¼þIDµÄÓ³Éä±í  ±£Áô£¬Î´Ê¹ÓÃ
+    multimap<TIME, EVENTID> m_mUncompltedEvent;	// ï¿½æ´¢Î´ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Â¼ï¿½IDï¿½ï¿½Ó³ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´Ê¹ï¿½ï¿½
 
-//    vector<CKeyManager> m_vAllKeyManager;	// ´æ´¢ÍøÂçÖÐËùÓÐÃÜÔ¿¹ÜÀíÆ÷µÄÁÐ±í
+//    vector<CKeyManager> m_vAllKeyManager;	// ï¿½æ´¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
 
-    multimap<TIME, DEMANDID> m_mDemandArriveTime;	// ´æ´¢ÐèÇóµ½´ïÊ±¼äºÍÐèÇóIDµÄÓ³Éä±í    ÓÐÐò
+    multimap<TIME, DEMANDID> m_mDemandArriveTime;	// ï¿½æ´¢ï¿½ï¿½ï¿½óµ½´ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½IDï¿½ï¿½Ó³ï¿½ï¿½ï¿½    ï¿½ï¿½ï¿½ï¿½
 
-    TIME FaultTime;  //±íÊ¾µ±Ç°¹ÊÕÏ·¢ÉúµÄÊ±¼ä
-    // vector<CLink> failedLink; //´æ´¢µ±Ç°Ê±Ï¶¹ÊÕÏµÄlink
-    list<LINKID> failedLink; //´æ´¢µ±Ç°Ê±Ï¶¹ÊÕÏµÄlinkID
+    TIME FaultTime;  //ï¿½ï¿½Ê¾ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+    // vector<CLink> failedLink; //ï¿½æ´¢ï¿½ï¿½Ç°Ê±Ï¶ï¿½ï¿½ï¿½Ïµï¿½link
+    list<LINKID> failedLink; //ï¿½æ´¢ï¿½ï¿½Ç°Ê±Ï¶ï¿½ï¿½ï¿½Ïµï¿½linkID
 
     uint32_t simID;
     string status;
@@ -43,13 +43,13 @@ public:
 
 
 private:
-    UINT m_uiNodeNum;	// ÍøÂçÖÐµÄ½ÚµãÊýÁ¿
-    UINT m_uiLinkNum;	// ÍøÂçÖÐµÄÁ´Â·ÊýÁ¿
-    UINT m_uiDemandNum;	// ÍøÂçÖÐµÄÐèÇóÊýÁ¿
-    TIME m_dSimTime;	// µ±Ç°Ä£ÄâÊ±¼ä
-    UINT m_step;        // Ö´ÐÐ²½Êý
-    std::unique_ptr<route::RouteFactory> m_routeFactory;    //Â·ÓÉ²ßÂÔ¹¤³§
-    std::unique_ptr<route::RouteStrategy> m_routeStrategy;  //µ±Ç°Â·ÓÉ²ßÂÔ
+    UINT m_uiNodeNum;	// ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ½Úµï¿½ï¿½ï¿½ï¿½ï¿½
+    UINT m_uiLinkNum;	// ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½
+    UINT m_uiDemandNum;	// ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    TIME m_dSimTime;	// ï¿½ï¿½Ç°Ä£ï¿½ï¿½Ê±ï¿½ï¿½
+    UINT m_step;        // Ö´ï¿½Ð²ï¿½ï¿½ï¿½
+    std::unique_ptr<route::RouteFactory> m_routeFactory;    //Â·ï¿½É²ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½
+    std::unique_ptr<route::RouteStrategy> m_routeStrategy;  //ï¿½ï¿½Ç°Â·ï¿½É²ï¿½ï¿½ï¿½
     SimResultStore simResStore;
     SimDao simDao;
 
@@ -64,11 +64,11 @@ public:
     void SetDemandNum(UINT demandNum);
     UINT GetDemandNum();
 
-    TIME CurrentTime();	// »ñÈ¡µ±Ç°Ä£ÄâÊ±¼ä
+    TIME CurrentTime();	// ï¿½ï¿½È¡ï¿½ï¿½Ç°Ä£ï¿½ï¿½Ê±ï¿½ï¿½
     UINT CurrentStep();
-    void MoveSimTime(TIME executeTime);	// ÍÆ½øÄ£ÄâÊ±¼ä²¢´¦ÀíÏàÓ¦µÄÊÂ¼þ
+    void MoveSimTime(TIME executeTime);	// ï¿½Æ½ï¿½Ä£ï¿½ï¿½Ê±ï¿½ä²¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Â¼ï¿½
 
-    void InitKeyManagerOverLink(LINKID linkId);	// ÎªÌØ¶¨Á´Â·³õÊ¼»¯ÃÜÔ¿¹ÜÀíÆ÷
+    void InitKeyManagerOverLink(LINKID linkId);	// Îªï¿½Ø¶ï¿½ï¿½ï¿½Â·ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     void InitNodes(UINT nodeNum);
 
@@ -83,51 +83,51 @@ public:
 
     //common route algorithms
     std::function<bool(NODEID, NODEID, list<NODEID>&, list<LINKID>&)> currentRouteAlg;
-    bool ShortestPath(NODEID sourceId, NODEID sinkId, list<NODEID>& nodeList, list<LINKID>& linkList);	// ÓÃÓÚ¼ÆËã´ÓÔ´½Úµãµ½»ã½ÚµãµÄ×î¶ÌÂ·¾¶£¬·µ»Ø¾­¹ýµÄ½ÚµãºÍÁ´Â·ÁÐ±í
-    bool Load_Balance(NODEID sourceId, NODEID sinkId, list<NODEID>& nodeList, list<LINKID>& linkList);  // ¸ºÔØ¾ùºâÂ·ÓÉËã·¨
-    bool KeyRateShortestPath(NODEID sourceId, NODEID sinkId, list<NODEID>& nodeList, list<LINKID>& linkList);  // È¨ÖØÎªkeyrateµÄ×î¶ÌÂ·Ëã·¨£¬·µ»Ø¾­¹ýµÄ½ÚµãºÍÁ´Â·ÁÐ±í
-    bool KeyRateShortestPathWithBinHeap(NODEID sourceId, NODEID sinkId, list<NODEID>& nodeList, list<LINKID>& linkList) ; //ÓÃ¶þ²æ¶ÑÓÅ»¯µÄkeyrate×î¶ÌÂ·Ëã·¨£¬·µ»Ø¾­¹ýµÄ½ÚµãºÍÁ´Â·ÁÐ±í
-    void ShowDemandPaths(); //²é¿´²¢Êä³öËùÓÐdemandµÄÂ·¾¶ÐÅÏ¢£¨½ÚµãÐÅÏ¢£©
+    bool ShortestPath(NODEID sourceId, NODEID sinkId, list<NODEID>& nodeList, list<LINKID>& linkList);	// ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Úµãµ½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ï¿½Ä½Úµï¿½ï¿½ï¿½ï¿½Â·ï¿½Ð±ï¿½
+    bool Load_Balance(NODEID sourceId, NODEID sinkId, list<NODEID>& nodeList, list<LINKID>& linkList);  // ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ã·¨
+    bool KeyRateShortestPath(NODEID sourceId, NODEID sinkId, list<NODEID>& nodeList, list<LINKID>& linkList);  // È¨ï¿½ï¿½Îªkeyrateï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ã·¨ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ï¿½Ä½Úµï¿½ï¿½ï¿½ï¿½Â·ï¿½Ð±ï¿½
+    bool KeyRateShortestPathWithBinHeap(NODEID sourceId, NODEID sinkId, list<NODEID>& nodeList, list<LINKID>& linkList) ; //ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½ï¿½ï¿½keyrateï¿½ï¿½ï¿½Â·ï¿½ã·¨ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ï¿½Ä½Úµï¿½ï¿½ï¿½ï¿½Â·ï¿½Ð±ï¿½
+    void ShowDemandPaths(); //ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½demandï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
     //function for scheduling
     std::function<TIME(NODEID, map<DEMANDID, VOLUME>&)> currentScheduleAlg;
-    TIME MinimumRemainingTimeFirst(NODEID nodeId, map<DEMANDID, VOLUME>& relayDemands); // ¼ÆËã¸ø¶¨½ÚµãµÄÐèÇó×ª·¢Ö´ÐÐÊ±¼ä
+    TIME MinimumRemainingTimeFirst(NODEID nodeId, map<DEMANDID, VOLUME>& relayDemands); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Ö´ï¿½ï¿½Ê±ï¿½ï¿½
     // TIME MinimumRemainingTimeFirstLinkBased(LINKID linkId, map<DEMANDID, VOLUME> &relayDemands);
-    TIME AverageKeyScheduling(NODEID nodeId, map<DEMANDID, VOLUME>& relayDemands); // ¼ÆËã¸ø¶¨½ÚµãµÄÐèÇó×ª·¢Ö´ÐÐÊ±¼ä
-    //link based»ùÓÚÁ´Â·
+    TIME AverageKeyScheduling(NODEID nodeId, map<DEMANDID, VOLUME>& relayDemands); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Ö´ï¿½ï¿½Ê±ï¿½ï¿½
+    //link basedï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·
     TIME MinimumRemainingTimeFirstLinkBased(LINKID linkId, map<DEMANDID, VOLUME> &relayDemands);
     TIME FindDemandToRelayLinkBased(map<NODEID, map<DEMANDID, VOLUME>> &relayDemand);
 
 
 public:
-    //functions for relay routing	³õÊ¼»¯Ö¸¶¨ÐèÇó»òËùÓÐÐèÇóµÄÖÐ¼ÌÂ·¾¶
+    //functions for relay routing	ï¿½ï¿½Ê¼ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½Â·ï¿½ï¿½
     void InitRelayPath(DEMANDID demandId);
-    // void InitRelayPath();//for all demands
+    void InitRelayPath();//for all demands
 
-    void InitRelayPath(size_t max_threads); // ´ø²ÎÊýµÄ°æ±¾
+    // void InitRelayPath(size_t max_threads); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä°æ±¾
 
     void InitLinkDemand();
 
-    // functions for relay rerouting  ·¢Éú¹ÊÕÏÊ±µÄ¿¹»Ù£¨ÖØÂ·ÓÉ£©¹¦ÄÜ
+    // functions for relay rerouting  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ä¿ï¿½ï¿½Ù£ï¿½ï¿½ï¿½Â·ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½
     // void CheckFault(DEMANDID demandId);
     void CheckFault();
     void ReInitRelayPath(DEMANDID demandId);
     void ReInitRelayPath();//for all demands
     void Rerouting();
 
-    TIME FindDemandToRelay(NODEID nodeId, map<DEMANDID, VOLUME>& relayDemand);	// È·¶¨Ó¦×ª·¢µÄÐèÇó£¬²¢¼ÆËãËùÐèµÄÊ±¼ä
+    TIME FindDemandToRelay(NODEID nodeId, map<DEMANDID, VOLUME>& relayDemand);	// È·ï¿½ï¿½Ó¦×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
     TIME FindDemandToRelay(map<NODEID, map<DEMANDID, VOLUME>>& relayDemand);
     // TIME FindDemandToRelayLinkBased(map<NODEID, map<DEMANDID, VOLUME>> &relayDemand);
-    void RelayForOneHop(TIME executeTime, map<NODEID, map<DEMANDID, VOLUME>>& relayDemands); // Ö´ÐÐÒ»´ÎÐèÇó×ª·¢²Ù×÷£¬ÖÐ¼Ìµ½ÏÂÒ»Ìø
-    void UpdateRemainingKeys(TIME executionTime);	// ¸üÐÂÁ´Â·ÉÏÊ£ÓàµÄÃÜÔ¿Á¿
-    void UpdateRemainingKeys(TIME executionTime, TIME m_dSimTime);	// ¸üÐÂÁ´Â·ÉÏÊ£ÓàµÄÃÜÔ¿Á¿
-    void SimTimeForward(TIME executionTime);	// ½«Ä£ÄâÊ±¼äÍÆ½øÖ¸¶¨µÄÖ´ÐÐÊ±¼ä
+    void RelayForOneHop(TIME executeTime, map<NODEID, map<DEMANDID, VOLUME>>& relayDemands); // Ö´ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼Ìµï¿½ï¿½ï¿½Ò»ï¿½ï¿½
+    void UpdateRemainingKeys(TIME executionTime);	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½
+    void UpdateRemainingKeys(TIME executionTime, TIME m_dSimTime);	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½
+    void SimTimeForward(TIME executionTime);	// ï¿½ï¿½Ä£ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Æ½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½Ê±ï¿½ï¿½
 
     //main process
-    bool AllDemandsDelivered();	// ¼ì²éÊÇ·ñËùÓÐÐèÇó¶¼ÒÑÍê³É´«Êä
-    TIME OneTimeRelay();	// Ö´ÐÐÒ»´Î×ª·¢²Ù×÷£¬²¢ÍÆ½øÄ£ÄâÊ±¼ä
-//    void MainProcess();	// ÍøÂçÄ£ÄâµÄÖ÷Á÷³Ì£¬¸ºÔð³õÊ¼»¯Â·¾¶£¬Öð²½Ö´ÐÐÐèÇó×ª·¢£¬Ö±µ½ËùÓÐÐèÇóÍê³É   ·ÏÆú
+    bool AllDemandsDelivered();	// ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É´ï¿½ï¿½ï¿½
+    TIME OneTimeRelay();	// Ö´ï¿½ï¿½Ò»ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ½ï¿½Ä£ï¿½ï¿½Ê±ï¿½ï¿½
+//    void MainProcess();	// ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½
 
-    // ÇÐ»»Ëã·¨
+    // ï¿½Ð»ï¿½ï¿½ã·¨
     void setShortestPath()
     {
         m_routeStrategy=std::move(m_routeFactory->CreateStrategy(route::RouteType_Bfs));
